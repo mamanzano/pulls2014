@@ -25,6 +25,7 @@
 
 .icon-lapiz:before {
 	content: "\e600";
+	margin-right: 0.8em;
 }
 
 .icon-f-arriba:before {
@@ -33,10 +34,14 @@
 
 .icon-f-abajo:before {
 	content: "\e097";
+	color: #DD4F24;
 }
 
 .icon-estrella:before {
 	content: "\e9d9";
+	color: #FFBE2C;
+	position: relative;
+	top: 0.1em;
 }
 
 
@@ -121,18 +126,26 @@ header #avatar img
 	border-radius: 50%;
 	width: 55px;
 }
+header #logo{
+	border-right: 1px solid white;
+	margin-right: 0.5em;
+}
 header #logo img
 {
-	border-right: 1px solid white;
-	padding-right: 0.5em;
+	
 	padding-right: 0.5em; 
 	width: 52px;
+	-webkit-transition: 0.5s;
 }
+header #logo img:hover
+{
+	-webkit-transform: rotate(360deg);
 
+}
 nav
 {
-	background: #80BCA3;
-	padding: 0 0.5em ;
+	background: #7488CD; /*#80BCA3*/
+	padding: 0 6em 0 0;
 	position: relative;
 }
 nav ul
@@ -154,9 +167,27 @@ nav ul #publicar_nav a
 	border-radius: 5px;
 	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
 	font-style: italic;
-	padding: 0.8em 0.5em;
+	padding: 0.8em 0.5em 0.8em 2em;
 	text-decoration: none;
 	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
+
+}
+nav ul #publicar_nav a:before
+{
+	position: absolute;
+	left: 0.5em;
+	top: 0.7em;
+}
+nav ul #publicar_nav a:hover:before
+{
+	font-size: 20px;
+	
+
+}
+
+nav ul li a:hover
+{
+	background: #343B54;
 }
 nav ul li 
 {
@@ -167,7 +198,11 @@ nav ul li a
 {
 	color: white;
 	display: block;
-	padding: 0.5em 0
+	padding: 0.5em;
+	-webkit-transition: 0.3s;
+}
+aside{
+	display: none;
 }
 
 #contenido
@@ -239,13 +274,44 @@ nav ul li a
 	margin-top: 3px;
 	padding: 0.5em 1em;
 	position: absolute;
-	top: 100;
+	top: 100%;
 	right: 3%;
 	/*width: 90%*/
 }
-
+ 
+#contenido .item .votacion a{
+	text-decoration: none;
+}
 #contenido .item .votacion .comentarios_item,
 #contenido .item .votacion .guardar_item
 {
 	float: right;
+}
+
+
+@media screen and (min-width: 800px){
+	#contenido{
+		overflow: hidden;
+	}
+	#contenido .item{
+		width: 49%;
+		float: left;
+		
+	}
+	#contenido .item:nth-child(odd){
+		margin-right: 2%;
+	}
+}
+
+
+@media screen and (min-width: 1000px){
+	aside{
+		display: block;
+		float: right;
+		margin: 1em;
+		width: 20%;
+	}
+	aside video{
+		width: 100%;
+	}
 }
