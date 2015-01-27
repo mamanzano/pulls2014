@@ -199,6 +199,7 @@ nav ul li a
 	color: white;
 	display: block;
 	padding: 0.5em;
+	text-decoration: none;
 	-webkit-transition: 0.3s;
 }
 aside{
