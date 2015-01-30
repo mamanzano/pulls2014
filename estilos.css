@@ -185,6 +185,13 @@ nav ul #publicar_nav a:hover:before
 
 }
 
+nav ul #publicar_nav .disabled
+{
+	background-color: gray;
+	pointer: arrow;
+	box-shadow: none;  
+}
+
 nav ul li a:hover
 {
 	background: #343B54;
