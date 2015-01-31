@@ -185,10 +185,10 @@ nav ul #publicar_nav a:hover:before
 
 }
 
-nav ul #publicar_nav .disabled
+nav ul #publicar_nav a .disabled
 {
-	background-color: gray;
-	pointer: arrow;
+	background-color: grey;
+	cursor: default;
 	box-shadow: none;  
 }
 
@@ -330,7 +330,8 @@ aside{
 .formulario
 {
 	padding: 1em;
-	text-align: right;;
+	text-align: right;
+	display: none;
 }
 
 .formulario input

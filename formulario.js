@@ -5,9 +5,19 @@ var $form = $('#formulario'),
 	$list = $('#contenido'),
 	$post = $('.item').first();
 
+if(localStorage.getItem('autosave')){
+	$titulo.val(sessionStorage.getItem('titulo'));
+	$url.val(sessionStorage.getItem('url'));
+}
+
+var id = setInterval(function(){
+	sessionStorage.setItem('titulo', $titulo.val());
+	sessionStorage.setItem('url', $url.val());
+}, 1000);
 
 function mostrarFormulario(){
 	$form.slideToggle();
+	$list.slideToggle();
 	return false;
 }
 
@@ -23,6 +33,9 @@ function agregarPost(){
 	$clone.hide();
 
 	$list.prepend($clone);
+	mostrarFormulario();
+	$titulo.val('');
+	$url.val('');
 	$clone.fadeIn();
 	return false;
 }
