@@ -9,7 +9,7 @@ function org_info (data){
 
 		view = {
 			name : data.name,
-			email : data.email;
+			email : data.email,
 			num_repos : data.public_repos,
 			url : data.html_url
 		}
@@ -17,8 +17,8 @@ function org_info (data){
 		url_repos = data.repos_url;
 		url_members = data.members_url.replace("{/member}", "");
 
-		$getJSON(url_members, members_info);
-		$getJSON(url_repos, repo_info); 
+		$.getJSON(url_members, members_info);
+		$.getJSON(url_repos, repo_info); 
 }
 
 function members_info (member){
@@ -31,7 +31,7 @@ function members_info (member){
 
     output = Mustache.render(template, view);
 
-    $("#repoinfo").html_url(output);
+    $("#repoinfo").html(output);
 }
 
 function repo_info(repos) {
